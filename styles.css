@@ -47,7 +47,7 @@ main {
 }
 
 main > * {
-    padding: var(--h-pad);
+    padding: var(--v-pad) var(--h-pad);
 }
 
 header,
@@ -229,7 +229,6 @@ nav a {
     color: var(--logo-white);
     font-size: var(--hero-secondary-fs);
 
-    margin: var(--v-pad) 0;
     padding: 3rem 6rem;
     border-radius: 1rem;
     
