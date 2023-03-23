@@ -1,0 +1,243 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+:root {
+    /* Colors */
+    --background-dark: #1f2937;
+    --logo-white: #f9faf8;
+    --nav-white: #e5e7eb;
+    --action-blue: #3882f6;
+    --quote-grey: #e5e7eb;
+
+    /* Font sizes */
+    --hero-main-fs: 3rem;
+    --hero-secondary-fs: 1.1rem;
+    --logo-fs: 1.5rem;
+    --main-fs: 2.25rem;
+
+    /* Other */
+    --h-pad: 1rem;
+    --v-pad: 4rem;
+    --max-content-width: 1080px;
+}
+
+.body-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: var(--max-content-width);
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    align-items: stretch;
+    justify-content: center;
+}
+
+main > * {
+    padding: var(--h-pad);
+}
+
+header,
+footer {
+    background: var(--background-dark);
+    box-shadow: 0 0 0 100vmax var(--background-dark);
+    clip-path: inset(0 -100vmax);
+
+    color: var(--nav-white);
+    font-size: 1.1rem;
+    padding: var(--h-pad);
+
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+header {
+    justify-content: space-between;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+
+footer {
+    justify-content: center;
+}
+
+.logo {
+    color: var(--logo-white);
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#hero {
+    background: var(--background-dark);
+    box-shadow: 0 0 0 100vmax var(--background-dark);
+    clip-path: inset(0 -100vmax);
+
+    padding-top: var(--v-pad);
+    padding-bottom: var(--v-pad);
+
+    display: flex;
+    align-items: center;
+    gap: var(--h-pad);
+    flex-wrap: wrap;
+}
+
+#hero > h1 {
+    font-size: var(--hero-main-fs);
+    font-weight: 900;
+}
+
+#hero > * {
+    flex: 1 1 30%;
+}
+
+.hero-action {
+    color: var(--logo-white);
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+.hero-action {
+    font-size: var(--hero-secondary-fs);
+}
+
+.hero-action h1 {
+    font-size: var(--hero-main-fs);
+    font-weight: 900;
+    align-items: flex-start;
+}
+
+.btn-primary {
+    background: var(--action-blue);
+    color: var(--logo-white);
+    font-weight: bold;
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--logo-white);
+    color: var(--action-blue);
+}
+
+.hero-action .btn-primary {
+    flex: 0 0 auto;
+    align-self: flex-start;
+}
+
+.hero-img {
+    align-self: stretch;
+}
+
+#info h1,
+#testimonials h1 {
+    font-size: var(--main-fs);
+    padding: 1em;
+    text-align: center;
+}
+
+#info * {
+    text-align: center;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+    margin: 2rem;
+}
+
+.info-icon {
+    --icon-side: 8vw;
+    height: var(--icon-side);
+    width: var(--icon-side);
+    border-radius: 5%;
+    border: 3px solid var(--action-blue);
+    margin-bottom: 1em;
+}
+
+#testimonials {
+    background: var(--quote-grey);
+    box-shadow: 0 0 0 100vmax var(--quote-grey);
+    clip-path: inset(0 -100vmax);
+
+    color: var(--background-dark);
+}
+
+.user-quotes figure {
+    /* TODO: add opaque layer to highlight quotes */
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    gap: .5em;
+    margin-bottom: 1em;
+}
+
+.user-quotes figcaption {
+    font-weight: bold;
+}
+
+.user-quotes figure:nth-child(even),
+.user-quotes figure:nth-child(even) figcaption {
+    margin-left: auto;
+}
+
+.user-quotes * {
+    color: var(--background-dark);
+    font-weight: lighter;
+    font-style: italic;
+    font-size: var(--logo-fs);
+}
+
+.action-container {
+    background: var(--action-blue);
+    color: var(--logo-white);
+    font-size: var(--hero-secondary-fs);
+
+    margin: var(--v-pad) 0;
+    padding: 3rem 6rem;
+    border-radius: 1rem;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-container .btn-primary {
+    border: 2px solid var(--logo-white);
+}
