@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -88,9 +89,17 @@ nav ul {
     gap: 1em;
 }
 
-nav a {
+nav a,
+.logo a {
     text-decoration: none;
     color: inherit;
+    padding: .25em .5em;
+}
+
+nav a:hover,
+.logo a:hover {
+    box-shadow: 0 .1em var(--logo-white);
+    filter: brightness(2);
 }
 
 #hero {
@@ -98,6 +107,7 @@ nav a {
     box-shadow: 0 0 0 100vmax var(--background-dark);
     clip-path: inset(0 -100vmax);
 
+    color: var(--logo-white);
     padding-top: var(--v-pad);
     padding-bottom: var(--v-pad);
 
@@ -107,7 +117,7 @@ nav a {
     flex-wrap: wrap;
 }
 
-#hero > h1 {
+.hero-action > h1 {
     font-size: var(--hero-main-fs);
     font-weight: 900;
 }
@@ -117,13 +127,12 @@ nav a {
 }
 
 .hero-action {
-    color: var(--logo-white);
     display: flex;
     flex-flow: column wrap;
     gap: 1rem;
 }
 
-.hero-action {
+.hero-action p {
     font-size: var(--hero-secondary-fs);
 }
 
@@ -153,7 +162,8 @@ nav a {
 }
 
 .hero-img {
-    align-self: stretch;
+    display: flex;
+    justify-content: center;
 }
 
 #info h1,
@@ -229,7 +239,7 @@ nav a {
     color: var(--logo-white);
     font-size: var(--hero-secondary-fs);
 
-    padding: 3rem 6rem;
+    padding: 2.5vw 5vw;
     border-radius: 1rem;
     
     display: flex;
