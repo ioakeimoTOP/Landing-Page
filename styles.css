@@ -74,7 +74,9 @@ header {
 }
 
 footer {
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    /* gap: .5em; */
 }
 
 .logo {
@@ -90,13 +92,15 @@ nav ul {
 }
 
 nav a,
+footer a,
 .logo a {
     text-decoration: none;
     color: inherit;
-    padding: .25em .5em;
+    padding: .15em 0;
 }
 
 nav a:hover,
+footer a:hover,
 .logo a:hover {
     box-shadow: 0 .1em var(--logo-white);
     filter: brightness(2);
@@ -120,6 +124,7 @@ nav a:hover,
 .hero-action > h1 {
     font-size: var(--hero-main-fs);
     font-weight: 900;
+    line-height: .95;
 }
 
 #hero > * {
@@ -130,6 +135,7 @@ nav a:hover,
     display: flex;
     flex-flow: column wrap;
     gap: 1rem;
+    line-height: 1.5;
 }
 
 .hero-action p {
@@ -193,12 +199,22 @@ nav a:hover,
 }
 
 .info-icon {
-    --icon-side: 8vw;
+    --icon-side: 150px;
     height: var(--icon-side);
     width: var(--icon-side);
     border-radius: 5%;
     border: 3px solid var(--action-blue);
     margin-bottom: 1em;
+
+    display: flex;
+    justify-items: center;
+}
+
+.info-icon img {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    margin: auto auto;
 }
 
 #testimonials {
@@ -249,4 +265,13 @@ nav a:hover,
 
 .action-container .btn-primary {
     border: 2px solid var(--logo-white);
+}
+
+.credits-container {
+    font-size: 75%;
+    line-height: 1.5;
+}
+
+.copyright {
+    padding: .5em;
 }
